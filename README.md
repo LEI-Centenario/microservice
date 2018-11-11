@@ -1,6 +1,6 @@
 # microservice
 一.简述
-  这是我的 springCloud 学习项目,
+  springCloud 学习项目,
   目前主要参考博客:史上最简单的SpringCloud教程 地址:https://blog.csdn.net/forezp/article/details/70148833/
   项目采用springboot2.0.5.RELEASE + springCloud Finchley.RELEASE 
 
@@ -20,4 +20,4 @@
   5.访问消费者controller,按照要求传入参数,可以看到端口在不断变化,实现了负载均衡;
   
 四.后续
-  不停的学习不断的充实自己使自己变得更有价值,fighting!👍
+ 
