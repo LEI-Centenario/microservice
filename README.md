@@ -1,6 +1,6 @@
 # microservice
 一.简述
-  这个本人 springCloud 学习项目,
+  这是我的 springCloud 学习项目,
   目前主要参考博客:史上最简单的SpringCloud教程 地址:https://blog.csdn.net/forezp/article/details/70148833/
   项目采用springboot2.0.5.RELEASE + springCloud Finchley.RELEASE 
 
