@@ -16,3 +16,11 @@ zuul:
     user-feign:
       path: /userFeign/**
       serviceId: user-service-consumer-feign
+  # 开启路由重试
+  retryable: true
+
+ribbon:
+  #对当前服务的重试次数
+  MaxAutoRetries: 2
+  #切换相同Server的次数
+  MaxAutoRetriesNextServer: 0
