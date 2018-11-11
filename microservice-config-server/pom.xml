@@ -3,9 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>microservice-zuul</artifactId>
-    <name>microservice-zuul</name>
+    <artifactId>microservice-config-server</artifactId>
+    <name>microservice-config-server</name>
     <packaging>jar</packaging>
+
     <parent>
         <artifactId>microservice-parent</artifactId>
         <groupId>cn.gamesource</groupId>
@@ -14,27 +15,18 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--网关-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
-        </dependency>
-        <!--路由重试-->
-        <dependency>
-            <groupId>org.springframework.retry</groupId>
-            <artifactId>spring-retry</artifactId>
+            <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
     </dependencies>
 
+
     <build>
-        <finalName>serviceZuul</finalName>
+        <finalName>configServer</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
