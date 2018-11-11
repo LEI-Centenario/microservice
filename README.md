@@ -7,6 +7,7 @@
 二.项目结构
   microservice-parent ----------------- 项目父工程,定义springCloud版本,公共配置
   microservice-register-center -------- Eureka注册中心
+  microservice-zuul ------------------- Zuul网关
   microservice-user-provider ---------- Eureka客户端,用户服务提供者
   microservice-user-consumer-ribbon  -- Eureka客户端,使用ribbon+rest的服务器消费者
   microservice-user-consumer-feign ---- Eureka客户端,使用feign的服务消费者
@@ -15,9 +16,10 @@
 三.启动与部署
   1.项目导入并配置好;
   2.启动注册中心, microservice-register-center 可以在配置文件修改端口,完后访问 http://配置的hostname:配置的端口/ 可以看到配置界面;
-  3.启动服务提供者 microservice-user-provider ,可以先启动成功后再修改端口启动多个,实现多服务,好做负载均衡;
-  4.启动服务消费者, microservice-user-consumer-ribbon 与 microservice-user-consumer-feign 启动其中一个就可以了;
-  5.访问消费者controller,按照要求传入参数,查看效果
+  3.启动服务网关,microservice-zuul 
+  4.启动服务提供者 microservice-user-provider ,可以先启动成功后再修改端口启动多个,实现多服务,好做负载均衡;
+  5.启动服务消费者, microservice-user-consumer-ribbon 或者 microservice-user-consumer-feign;
+  6.通过网关访问消费者controller,按照要求传入参数,查看效果
   
 四.后续
  
