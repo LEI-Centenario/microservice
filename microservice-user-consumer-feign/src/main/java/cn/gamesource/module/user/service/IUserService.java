@@ -1,5 +1,6 @@
 package cn.gamesource.module.user.service;
 
+import cn.gamesource.module.user.service.error.UserServiceErrorHandle;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,9 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * 注解 FeignClient(需要调用的服务名字)
  * 接口每个方法配置服务
+ *
  * @author: LEIYU
  */
-@FeignClient("user-service-provider")
+@FeignClient(value = "user-service-provider", fallback = UserServiceErrorHandle.class)
 public interface IUserService {
 
 

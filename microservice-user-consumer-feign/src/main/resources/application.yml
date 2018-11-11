@@ -9,3 +9,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:9001/eureka/
+
+# 开启Feign断路器支持
+feign.hystrix.enabled: true

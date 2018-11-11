@@ -1,2 +1,28 @@
 本章参考文档
     https://blog.csdn.net/forezp/article/details/81040965
+
+一.开始
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+    </dependencies>
+    
+二.改造,增加断路器Hystrix
+    1.不用引入依赖,因为Feign自带Hystrix断路器,只是默认关闭,开启方式->配置文件增加 feign.hystrix.enabled: true
+    2.工程改造
+        @FeignClient(value="user-service-provider")-> @FeignClient(value="user-service-provider",fallback=需要处理的类.class)
+        需要处理的类需要实现这个消费者接口,并注入到容器中
+        比如项目中,UserServiceErrorHandle 就是容错处理的类,实现了IUserService接口
+        @FeignClient(value = "user-service-provider", fallback = UserServiceErrorHandle.class)
+        public interface IUserService 
+        
