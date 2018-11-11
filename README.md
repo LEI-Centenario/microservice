@@ -17,7 +17,7 @@
   2.启动注册中心, microservice-register-center 可以在配置文件修改端口,完后访问 http://配置的hostname:配置的端口/ 可以看到配置界面;
   3.启动服务提供者 microservice-user-provider ,可以先启动成功后再修改端口启动多个,实现多服务,好做负载均衡;
   4.启动服务消费者, microservice-user-consumer-ribbon 与 microservice-user-consumer-feign 启动其中一个就可以了;
-  5.访问消费者controller,按照要求传入参数,可以看到端口在不断变化,实现了负载均衡;
+  5.访问消费者controller,按照要求传入参数,查看效果
   
 四.后续
  
