@@ -26,6 +26,7 @@
         <module>microservice-user-consumer-feign</module>
         <module>microservice-zuul</module>
         <module>microservice-config-server</module>
+        <module>microservice-config-client</module>
     </modules>
 
 </project>
