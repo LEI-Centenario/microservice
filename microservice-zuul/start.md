@@ -22,4 +22,5 @@
     zuul网关、服务消费者启动,服务提供方没有启动,消费者通过网关访问服务提供者,会直接报错,没有进行熔断,所以我们需要在网关
     这里做熔断机制,需要进行转发的消费者服务器都需要实现 FallbackProvider 接口进行熔断处理
     具体代码  cn.gamesource.core.fallback 包下
-  
+    本段参考资料: https://blog.csdn.net/ityouknow/article/details/79215698
+    
