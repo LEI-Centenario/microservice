@@ -1,0 +1,18 @@
+server:
+  port: 5001
+spring:
+  application:
+    name: service-zuul
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+zuul:
+  # 配置转发规则,以 serviceRibbon 开头的请求转发给 user-service-consumer-ribbon 服务,下面同理;
+  routes:
+    user-ribbon:
+      path: /userRibbon/**
+      serviceId: user-service-consumer-ribbon
+    user-feign:
+      path: /userFeign/**
+      serviceId: user-service-consumer-feign

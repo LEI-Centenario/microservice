@@ -24,6 +24,7 @@
         <module>microservice-user-provider</module>
         <module>microservice-user-consumer-ribbon</module>
         <module>microservice-user-consumer-feign</module>
+        <module>microservice-zuul</module>
     </modules>
 
 </project>

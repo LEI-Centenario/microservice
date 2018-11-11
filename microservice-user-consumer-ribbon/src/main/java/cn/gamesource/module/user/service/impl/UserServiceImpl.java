@@ -38,6 +38,6 @@ public class UserServiceImpl implements IUserService {
      * @author: LEIYU
      */
     public String errorHandle(Long id, String name) {
-        return "哎呀,不好意思" + name + ",服务出错啦,请稍后再试";
+        return "哎呀,不好意思" + name + ",服务出错啦,请稍后再试-Ribbon";
     }
 }
