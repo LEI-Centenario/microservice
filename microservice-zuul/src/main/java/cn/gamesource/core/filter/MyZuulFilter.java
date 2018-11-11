@@ -33,7 +33,7 @@ public class MyZuulFilter extends ZuulFilter {
     }
 
     /**
-     * 过滤的顺序
+     * 定义filter的顺序，数字越小表示顺序越高，越先执行
      *
      * @return
      * @author: LEIYU
@@ -44,14 +44,14 @@ public class MyZuulFilter extends ZuulFilter {
     }
 
     /**
-     * 这里可以写逻辑判断，是否要过滤，true,永远过滤。
+     * 表示是否需要执行该filter，true表示执行，false表示不执行
      *
      * @return
      * @author: LEIYU
      */
     @Override
     public boolean shouldFilter() {
-        return true;
+        return false;
     }
 
 
@@ -61,22 +61,22 @@ public class MyZuulFilter extends ZuulFilter {
      */
     @Override
     public Object run() throws ZuulException {
-//        RequestContext ctx = RequestContext.getCurrentContext();
-//        HttpServletRequest request = ctx.getRequest();
-//        log.info(String.format("%s >>> %s", request.getMethod(), request.getRequestURL().toString()));
-//        Object accessToken = request.getParameter("token");
-//        if (accessToken == null) {
-//            log.warn("token is empty");
-//            ctx.setSendZuulResponse(false);
-//            ctx.setResponseStatusCode(401);
-//            try {
-//                ctx.getResponse().getWriter().write("token is empty");
-//            } catch (Exception e) {
-//            }
-//
-//            return null;
-//        }
-//        log.info("ok");
+        RequestContext ctx = RequestContext.getCurrentContext();
+        HttpServletRequest request = ctx.getRequest();
+        log.info(String.format("%s >>> %s", request.getMethod(), request.getRequestURL().toString()));
+        Object accessToken = request.getParameter("token");
+        if (accessToken == null) {
+            log.warn("token is empty");
+            ctx.setSendZuulResponse(false);
+            ctx.setResponseStatusCode(401);
+            try {
+                ctx.getResponse().getWriter().write("token is empty");
+            } catch (Exception e) {
+            }
+
+            return null;
+        }
+        log.info("ok");
         return null;
     }
 }
