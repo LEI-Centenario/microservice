@@ -3,6 +3,8 @@ package cn.gamesource.module.user.service.impl;
 import cn.gamesource.module.user.service.IUserService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
