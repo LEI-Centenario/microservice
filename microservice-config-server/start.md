@@ -14,4 +14,7 @@ or
 eg:
 http://localhost:8888/config-client/dev
 
-  
+
+改造:
+    1.高可用配置中心
+        https://blog.csdn.net/forezp/article/details/81041045

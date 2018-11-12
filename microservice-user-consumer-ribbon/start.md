@@ -29,4 +29,11 @@
     3.熔断处理
          在需要处理的方法上增加 @HystrixCommand(fallbackMethod = 临时处理的方法名)
          在[临时处理的方法]里配置解决方案,参数与此方法一样;
+    4.服务链路跟踪
+        参考:
+        https://blog.csdn.net/forezp/article/details/81041078
+        http://www.cnblogs.com/duanxz/p/7552857.html
+        xml增加zipkin依赖
+        配置文件增加[spring.zipkin.base-url=http://localhost:9411] 配置
+        
         

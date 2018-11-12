@@ -24,5 +24,11 @@
         需要处理的类需要实现这个消费者接口,并注入到容器中
         比如项目中,UserServiceErrorHandle 就是容错处理的类,实现了IUserService接口
         @FeignClient(value = "user-service-provider", fallback = UserServiceErrorHandle.class)
-        public interface IUserService 
+        public interface IUserService
+    3.服务链路跟踪
+        参考:
+          https://blog.csdn.net/forezp/article/details/81041078
+          http://www.cnblogs.com/duanxz/p/7552857.html
+        xml增加zipkin依赖
+        配置文件增加[spring.zipkin.base-url=http://localhost:9411] 配置
         
