@@ -1,0 +1,20 @@
+server:
+  port: 9003
+
+spring:
+#  application:
+#    name: eurka-server
+  profiles: peer2
+
+eureka:
+  instance:
+#    hostname: peer2
+    # 自动配置IP  http://www.itmuch.com/spring-cloud-code-read/spring-cloud-code-read-eureka-registry-ip/
+    prefer-ip-address: true
+  client:
+    # 通过eureka.client.registerWithEureka：false和fetchRegistry：false来表明自己是一个eureka server.
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:9002/eureka/
+
